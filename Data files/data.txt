@@ -1,1 +1,38 @@
-"this","is","the","first","line"
+Average these numbers
+45
+32
+78
+29
+54
+
+Add these numbers
+4
+5
+8
+2
+6786
+43231
+7765
+2342
+5675674
+098
+
+Subtract these numbers
+123123123
+32
+453
+75566
+453
+654
+234
+332
+44
+
+Multiply these numbers
+9
+2
+4
+1
+4
+56
+6
