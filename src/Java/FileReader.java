@@ -1,16 +1,28 @@
 package Java;
 
-import java.io.File;
-import java.net.URL;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * Reads in files
  */
 public class FileReader {
 
-    public File getFile(){
-        URL url = getClass().getResource("data.txt");
-        File file = new File(url.getPath());
-        return file;
+    public List<String> readFile(){
+        List<String> lines = new ArrayList<>();
+        try {
+            BufferedReader reader = new BufferedReader(new java.io.FileReader("F:\\Intellij Projects\\TDD-example\\out\\production\\TDD-example\\Data\\data.txt"));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                lines.add(line);
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            System.err.format("IOException: %s%n", e);
+        }
+        return lines;
     }
 }
