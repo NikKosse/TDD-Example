@@ -25,4 +25,11 @@ public class FileReader {
         }
         return lines;
     }
+
+    public ArrayList<ArrayList<String>> splitData(List list){
+        ArrayList<ArrayList<String>> lists = new ArrayList<ArrayList<String>>();
+        
+
+        return lists;
+    }
 }
