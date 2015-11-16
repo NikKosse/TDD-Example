@@ -1,11 +1,11 @@
-Average these numbers
+Average
 45
 32
 78
 29
 54
 
-Add these numbers
+Add
 4
 5
 8
@@ -17,7 +17,7 @@ Add these numbers
 5675674
 098
 
-Subtract these numbers
+Subtract
 123123123
 32
 453
@@ -28,7 +28,7 @@ Subtract these numbers
 332
 44
 
-Multiply these numbers
+Multiply
 9
 2
 4
