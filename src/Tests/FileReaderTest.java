@@ -10,7 +10,11 @@ import static org.junit.Assert.*;
 public class FileReaderTest {
 
     @Test
-    public void testGetFile() throws Exception {
+    public void testReadFile() throws Exception {
+        //setup
 
+        //act
+
+        //assert
     }
 }

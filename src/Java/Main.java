@@ -11,8 +11,7 @@ public class Main {
 
     public static void main(String[] args) {
         FileReader reader = new FileReader();
-        List<String> lines;
+        ArrayList<String> lines;
         lines = reader.readFile();
-        reader.splitData(lines);
     }
 }

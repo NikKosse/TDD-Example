@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
 
 
 /**
@@ -11,14 +12,36 @@ import java.util.List;
  */
 public class FileReader {
 
-    public List<String> readFile(){
-        List<String> lines = new ArrayList<>();
+    public ArrayList<String> readFile(){
+        ArrayList<String> lines = new ArrayList<>();
+        ArrayList<Integer> average = new ArrayList<>();
+        ArrayList<Integer> add = new ArrayList<>();
+        ArrayList<Integer> subtract = new ArrayList<>();
+        ArrayList<Integer> multiply = new ArrayList<>();
         try {
-            BufferedReader reader = new BufferedReader(new java.io.FileReader("C:\\Users\\Nikolas\\IdeaProjects\\TDD-example\\Data files\\data.txt"));
+            BufferedReader reader = new BufferedReader(new java.io.FileReader("F:\\Intellij Projects\\TDD-example\\out\\production\\TDD-example\\Data\\data.txt"));
             String line;
             while ((line = reader.readLine()) != null) {
-                lines.add(line);
-                System.out.println(line);
+                if(line.equals("Average")){
+                    while(!(line = reader.readLine()).equals("")){
+                        average.add(Integer.parseInt(line));
+                    }
+                }
+                else if(line.equals("Add")){
+                    while(!(line = reader.readLine()).equals("")){
+                        add.add(Integer.parseInt(line));
+                    }
+                }
+                else if(line.equals("Subtract")){
+                    while(!(line = reader.readLine()).equals("")){
+                        subtract.add(Integer.parseInt(line));
+                    }
+                }
+                else if(line.equals("Multiply")){
+                    while((line = reader.readLine()) != null){
+                        multiply.add(Integer.parseInt(line));
+                    }
+                }
             }
         } catch (IOException e) {
             System.err.format("IOException: %s%n", e);
@@ -26,10 +49,7 @@ public class FileReader {
         return lines;
     }
 
-    public ArrayList<ArrayList<String>> splitData(List list){
-        ArrayList<ArrayList<String>> lists = new ArrayList<ArrayList<String>>();
-        
+    public void combineLists(ArrayList average, ArrayList add, ArrayList subtract, ArrayList multiply){
 
-        return lists;
     }
 }
