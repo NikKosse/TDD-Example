@@ -17,7 +17,7 @@ public class FileReader {
         ArrayList<Integer> subtract = new ArrayList<>();
         ArrayList<Integer> multiply = new ArrayList<>();
         try {
-            BufferedReader reader = new BufferedReader(new java.io.FileReader("F:\\Intellij Projects\\TDD-example\\out\\production\\TDD-example\\Data\\data.txt"));
+            BufferedReader reader = new BufferedReader(new java.io.FileReader("C:\\Users\\Nikolas\\IdeaProjects\\TDD-example\\out\\production\\TDD-example\\Data\\data.txt"));
             String line;
             while ((line = reader.readLine()) != null) {
                 if(line.equals("Average")){
@@ -44,7 +44,7 @@ public class FileReader {
         } catch (IOException e) {
             System.err.format("IOException: %s%n", e);
         }
-        combineLists(average,add,subtract,multiply);
+        allData = combineLists(average, add, subtract, multiply);
         return allData;
     }
 

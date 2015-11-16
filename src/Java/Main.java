@@ -9,8 +9,9 @@ public class Main {
 
     public static void main(String[] args) {
         FileReader reader = new FileReader();
+        Calculator calculator = new Calculator();
         ArrayList<ArrayList<Integer>> lists;
         lists = reader.readFile();
-        System.out.println(lists);
+
     }
 }
