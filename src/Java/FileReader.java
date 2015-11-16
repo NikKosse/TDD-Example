@@ -3,8 +3,6 @@ package Java;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.ListIterator;
 
 
 /**
@@ -12,8 +10,8 @@ import java.util.ListIterator;
  */
 public class FileReader {
 
-    public ArrayList<String> readFile(){
-        ArrayList<String> lines = new ArrayList<>();
+    public ArrayList<ArrayList<Integer>> readFile(){
+        ArrayList<ArrayList<Integer>> allData = new ArrayList<>();
         ArrayList<Integer> average = new ArrayList<>();
         ArrayList<Integer> add = new ArrayList<>();
         ArrayList<Integer> subtract = new ArrayList<>();
@@ -46,10 +44,16 @@ public class FileReader {
         } catch (IOException e) {
             System.err.format("IOException: %s%n", e);
         }
-        return lines;
+        combineLists(average,add,subtract,multiply);
+        return allData;
     }
 
-    public void combineLists(ArrayList average, ArrayList add, ArrayList subtract, ArrayList multiply){
-
+    public ArrayList<ArrayList<Integer>> combineLists(ArrayList average, ArrayList add, ArrayList subtract, ArrayList multiply){
+        ArrayList<ArrayList<Integer>> listOfLists = new ArrayList<>();
+        listOfLists.add(average);
+        listOfLists.add(add);
+        listOfLists.add(subtract);
+        listOfLists.add(multiply);
+        return listOfLists;
     }
 }
