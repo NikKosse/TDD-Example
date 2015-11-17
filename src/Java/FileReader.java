@@ -54,6 +54,7 @@ public class FileReader {
         } catch (IOException e) {
             System.err.format("IOException: %s%n", e);
         }
+        //TODO: move this into the dataInsert class
         averageModel.setNumbers(average);
         addModel.setNumbers(add);
         subtractModel.setNumbers(subtract);
