@@ -10,35 +10,37 @@ import java.util.ArrayList;
  */
 public class FileReader {
 
-    public ArrayList<ArrayList<Integer>> readFile(){
-        ArrayList<ArrayList<Integer>> allData = new ArrayList<>();
+    public ArrayList<ArrayList<Integer>> readFile() {
+        ArrayList<ArrayList<Integer>> allData;
         ArrayList<Integer> average = new ArrayList<>();
         ArrayList<Integer> add = new ArrayList<>();
         ArrayList<Integer> subtract = new ArrayList<>();
         ArrayList<Integer> multiply = new ArrayList<>();
         try {
-            BufferedReader reader = new BufferedReader(new java.io.FileReader("C:\\Users\\Nikolas\\IdeaProjects\\TDD-example\\out\\production\\TDD-example\\Data\\data.txt"));
+            BufferedReader reader = new BufferedReader(new java.io.FileReader("F:\\Intellij Projects\\TDD-example\\out\\production\\TDD-example\\Data\\data.txt"));
             String line;
             while ((line = reader.readLine()) != null) {
-                if(line.equals("Average")){
-                    while(!(line = reader.readLine()).equals("")){
-                        average.add(Integer.parseInt(line));
-                    }
-                }
-                else if(line.equals("Add")){
-                    while(!(line = reader.readLine()).equals("")){
-                        add.add(Integer.parseInt(line));
-                    }
-                }
-                else if(line.equals("Subtract")){
-                    while(!(line = reader.readLine()).equals("")){
-                        subtract.add(Integer.parseInt(line));
-                    }
-                }
-                else if(line.equals("Multiply")){
-                    while((line = reader.readLine()) != null){
-                        multiply.add(Integer.parseInt(line));
-                    }
+                switch (line) {
+                    case "Average":
+                        while (!(line = reader.readLine()).equals("")) {
+                            average.add(Integer.parseInt(line));
+                        }
+                        break;
+                    case "Add":
+                        while (!(line = reader.readLine()).equals("")) {
+                            add.add(Integer.parseInt(line));
+                        }
+                        break;
+                    case "Subtract":
+                        while (!(line = reader.readLine()).equals("")) {
+                            subtract.add(Integer.parseInt(line));
+                        }
+                        break;
+                    case "Multiply":
+                        while ((line = reader.readLine()) != null) {
+                            multiply.add(Integer.parseInt(line));
+                        }
+                        break;
                 }
             }
         } catch (IOException e) {
@@ -48,7 +50,7 @@ public class FileReader {
         return allData;
     }
 
-    public ArrayList<ArrayList<Integer>> combineLists(ArrayList average, ArrayList add, ArrayList subtract, ArrayList multiply){
+    public ArrayList<ArrayList<Integer>> combineLists(ArrayList average, ArrayList add, ArrayList subtract, ArrayList multiply) {
         ArrayList<ArrayList<Integer>> listOfLists = new ArrayList<>();
         listOfLists.add(average);
         listOfLists.add(add);
