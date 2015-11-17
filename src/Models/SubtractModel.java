@@ -17,9 +17,9 @@ public class SubtractModel {
         this.numbers = numbers;
     }
 
-    public int getDifference() {
-        return difference;
-    }
+//    public int getDifference() {
+//        return difference;
+//    }
 
     public void setDifference(int difference) {
         this.difference = difference;
