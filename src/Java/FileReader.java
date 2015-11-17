@@ -1,5 +1,10 @@
 package Java;
 
+import Models.AddModel;
+import Models.AverageModel;
+import Models.MultiplyModel;
+import Models.SubtractModel;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -9,9 +14,12 @@ import java.util.ArrayList;
  * Reads in files
  */
 public class FileReader {
+    AddModel addModel = new AddModel();
+    AverageModel averageModel = new AverageModel();
+    SubtractModel subtractModel = new SubtractModel();
+    MultiplyModel multiplyModel = new MultiplyModel();
 
-    public ArrayList<ArrayList<Integer>> readFile() {
-        ArrayList<ArrayList<Integer>> allData;
+    public void readFile() {
         ArrayList<Integer> average = new ArrayList<>();
         ArrayList<Integer> add = new ArrayList<>();
         ArrayList<Integer> subtract = new ArrayList<>();
@@ -46,16 +54,10 @@ public class FileReader {
         } catch (IOException e) {
             System.err.format("IOException: %s%n", e);
         }
-        allData = combineLists(average, add, subtract, multiply);
-        return allData;
+        averageModel.setNumbers(average);
+        addModel.setNumbers(add);
+        subtractModel.setNumbers(subtract);
+        multiplyModel.setNumbers(multiply);
     }
 
-    public ArrayList<ArrayList<Integer>> combineLists(ArrayList average, ArrayList add, ArrayList subtract, ArrayList multiply) {
-        ArrayList<ArrayList<Integer>> listOfLists = new ArrayList<>();
-        listOfLists.add(average);
-        listOfLists.add(add);
-        listOfLists.add(subtract);
-        listOfLists.add(multiply);
-        return listOfLists;
-    }
 }

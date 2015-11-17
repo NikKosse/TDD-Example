@@ -5,7 +5,6 @@ import Models.AverageModel;
 import Models.MultiplyModel;
 import Models.SubtractModel;
 
-import java.util.ArrayList;
 
 /**
  * Primary class for the project
@@ -13,24 +12,22 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
+        //models for the four functions
         AddModel addModel = new AddModel();
         AverageModel averageModel = new AverageModel();
         SubtractModel subtractModel = new SubtractModel();
         MultiplyModel multiplyModel = new MultiplyModel();
 
+        //object instances
         FileReader reader = new FileReader();
         Calculator calculator = new Calculator();
-        ArrayList<ArrayList<Integer>> lists;
-        lists = reader.readFile();
+        reader.readFile();
 
-        double average = calculator.averageNumbers(lists.get(0));
-        int sum = calculator.addNumbers(lists.get(1));
-        int difference = calculator.subtractNumbers(lists.get(2));
-        int product = calculator.multiplyNumbers(lists.get(3));
+        //calling the four functions and filling the models with results
+        averageModel.setAverage(calculator.averageNumbers(averageModel.getNumbers()));
+        addModel.setSum(calculator.addNumbers(addModel.getNumbers()));
+        subtractModel.setDifference(calculator.subtractNumbers(subtractModel.getNumbers()));
+        multiplyModel.setProduct(calculator.multiplyNumbers(multiplyModel.getNumbers()));
 
-        addModel.setSum(sum);
-        averageModel.setAverage(average);
-        subtractModel.setDifference(difference);
-        multiplyModel.setProduct(product);
     }
 }
