@@ -1,5 +1,10 @@
 package Java;
 
+import Models.AddModel;
+import Models.AverageModel;
+import Models.MultiplyModel;
+import Models.SubtractModel;
+
 import java.util.ArrayList;
 
 /**
@@ -8,6 +13,11 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
+        AddModel addModel = new AddModel();
+        AverageModel averageModel = new AverageModel();
+        SubtractModel subtractModel = new SubtractModel();
+        MultiplyModel multiplyModel = new MultiplyModel();
+
         FileReader reader = new FileReader();
         Calculator calculator = new Calculator();
         ArrayList<ArrayList<Integer>> lists;
@@ -18,9 +28,9 @@ public class Main {
         int difference = calculator.subtractNumbers(lists.get(2));
         int product = calculator.multiplyNumbers(lists.get(3));
 
-        System.out.println("Average is: " + average);
-        System.out.println("Sum is: " + sum);
-        System.out.println("Difference is: " + difference);
-        System.out.println("Product is: " + product);
+        addModel.setSum(sum);
+        averageModel.setAverage(average);
+        subtractModel.setDifference(difference);
+        multiplyModel.setProduct(product);
     }
 }
