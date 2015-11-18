@@ -14,12 +14,11 @@ import java.util.ArrayList;
  * Reads in files
  */
 public class FileReader {
-    AddModel addModel = new AddModel();
-    AverageModel averageModel = new AverageModel();
-    SubtractModel subtractModel = new SubtractModel();
-    MultiplyModel multiplyModel = new MultiplyModel();
 
-    public void readFile() {
+
+
+    public ArrayList<ArrayList<Integer>> readFile() {
+        ArrayList<ArrayList<Integer>> allData;
         ArrayList<Integer> average = new ArrayList<>();
         ArrayList<Integer> add = new ArrayList<>();
         ArrayList<Integer> subtract = new ArrayList<>();
@@ -54,11 +53,17 @@ public class FileReader {
         } catch (IOException e) {
             System.err.format("IOException: %s%n", e);
         }
-        //TODO: move this into the dataInsert class
-        averageModel.setNumbers(average);
-        addModel.setNumbers(add);
-        subtractModel.setNumbers(subtract);
-        multiplyModel.setNumbers(multiply);
+
+        allData = combineLists(average, add, subtract, multiply);
+        return allData;
     }
 
+    public ArrayList<ArrayList<Integer>> combineLists(ArrayList average, ArrayList add, ArrayList subtract, ArrayList multiply) {
+        ArrayList<ArrayList<Integer>> listOfLists = new ArrayList<>();
+        listOfLists.add(average);
+        listOfLists.add(add);
+        listOfLists.add(subtract);
+        listOfLists.add(multiply);
+        return listOfLists;
+    }
 }

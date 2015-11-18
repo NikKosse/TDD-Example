@@ -17,9 +17,9 @@ public class MultiplyModel {
         this.numbers = numbers;
     }
 
-//    public int getProduct() {
-//        return product;
-//    }
+    public int getProduct() {
+        return product;
+    }
 
     public void setProduct(int product) {
         this.product = product;

@@ -5,6 +5,8 @@ import Models.AverageModel;
 import Models.MultiplyModel;
 import Models.SubtractModel;
 
+import java.util.ArrayList;
+
 
 /**
  * Primary class for the project
@@ -12,7 +14,10 @@ import Models.SubtractModel;
 public class Main {
 
     public static void main(String[] args) {
-        //models for the four functions
+        //list of lists to hold the different lists of numbers
+        ArrayList<ArrayList<Integer>> lists;
+
+        //instances of models for the four functions
         AddModel addModel = new AddModel();
         AverageModel averageModel = new AverageModel();
         SubtractModel subtractModel = new SubtractModel();
@@ -21,7 +26,18 @@ public class Main {
         //object instances
         FileReader reader = new FileReader();
         Calculator calculator = new Calculator();
-        reader.readFile();
+
+        //dataInsert and dataAccess instances
+        DataAccess dataAccess = new DataAccess();
+        DataInsert dataInsert = new DataInsert();
+        //read file in
+        lists = reader.readFile();
+
+        //fill the data into each model
+        dataInsert.insertAverage(lists.get(0), averageModel);
+        dataInsert.insertAdd(lists.get(1), addModel);
+        dataInsert.insertSubtract(lists.get(2), subtractModel);
+        dataInsert.insertMultiply(lists.get(3), multiplyModel);
 
         //calling the four functions and filling the models with results
         averageModel.setAverage(calculator.averageNumbers(averageModel.getNumbers()));
@@ -29,5 +45,16 @@ public class Main {
         subtractModel.setDifference(calculator.subtractNumbers(subtractModel.getNumbers()));
         multiplyModel.setProduct(calculator.multiplyNumbers(multiplyModel.getNumbers()));
 
+        //get results from the models
+        double average = dataAccess.getAverage(averageModel);
+        int sum = dataAccess.getSum(addModel);
+        int difference = dataAccess.getDifference(subtractModel);
+        int product = dataAccess.getProduct(multiplyModel);
+
+        //print results
+        System.out.println("Average is: " + average);
+        System.out.println("Sum is: " + sum);
+        System.out.println("Difference is: " + difference);
+        System.out.println("Product is: " + product);
     }
 }
