@@ -30,6 +30,7 @@ public class Main {
         //dataInsert and dataAccess instances
         DataAccess dataAccess = new DataAccess();
         DataInsert dataInsert = new DataInsert();
+
         //read file in
         lists = reader.readFile();
 
