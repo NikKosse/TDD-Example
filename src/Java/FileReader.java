@@ -9,8 +9,6 @@ import java.util.ArrayList;
  */
 public class FileReader {
 
-
-
     public ArrayList<ArrayList<Integer>> readFile() {
         ArrayList<ArrayList<Integer>> allData;
         ArrayList<Integer> average = new ArrayList<>();
@@ -18,7 +16,7 @@ public class FileReader {
         ArrayList<Integer> subtract = new ArrayList<>();
         ArrayList<Integer> multiply = new ArrayList<>();
         try {
-            BufferedReader reader = new BufferedReader(new java.io.FileReader("F:\\Intellij Projects\\TDD-example\\out\\production\\TDD-example\\Data\\data.txt"));
+            BufferedReader reader = new BufferedReader(new java.io.FileReader("C:\\Users\\Nikolas.Kosse\\IdeaProjects\\TDD-example\\src\\Data\\data.txt"));
             String line;
             while ((line = reader.readLine()) != null) {
                 switch (line) {
